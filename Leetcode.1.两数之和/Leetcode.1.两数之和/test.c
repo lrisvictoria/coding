@@ -31,7 +31,6 @@
 //    }
 //    return nums;
 //}
-
 //创建静态数组，不使用局部变量，小心空间被释放
 int* twoSum(int* nums, int numsSize, int target, int* returnSize) {
     static int result[2] = { 0 };//静态数组
