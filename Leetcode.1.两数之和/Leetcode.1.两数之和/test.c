@@ -10,24 +10,43 @@
 解释：因为 nums[0] + nums[1] == 9 ，返回[0, 1] 。
 */
 
-//暴力求解法：遍历整个数组，如果找到两数之和为target，将数组设定为这两个数，返回数组
+//暴力求解法：遍历传入整个数组，如果找到两数之和为target，将数组设定为这两个数，返回传入数组
 /**
  * Note: The returned array must be malloced, assume caller calls free().
  */
+//int* twoSum(int* nums, int numsSize, int target, int* returnSize) {
+//    *returnSize = 0;//数组大小设定为0
+//    for (int i = 0; i < numsSize; i++)
+//    {
+//        for (int j = i + 1; j < numsSize; j++)//从i + 1向后遍历
+//        {
+//            if (nums[i] + nums[j] == target)
+//            {
+//                nums[0] = i;
+//                nums[1] = j;
+//                *returnSize = 2;//返回数组大小为2
+//                break;
+//            }
+//        }
+//    }
+//    return nums;
+//}
+
+//创建静态数组，不使用局部变量，小心空间被释放
 int* twoSum(int* nums, int numsSize, int target, int* returnSize) {
-    *returnSize = 0;//数组大小设定为0
+    static int result[2] = { 0 };//静态数组
+    *returnSize = 0;
     for (int i = 0; i < numsSize; i++)
     {
-        for (int j = i + 1; j < numsSize; j++)//从i + 1向后遍历
+        for (int j = i + 1; j < numsSize; j++)
         {
-            if (nums[i] + nums[j] == target)
+            if (target == nums[i] + nums[j])
             {
-                nums[0] = i;
-                nums[1] = j;
-                *returnSize = 2;//返回数组大小为2
-                break;
+                result[0] = i;
+                result[1] = j;
+                *returnSize = 2;
             }
         }
     }
-    return nums;
+    return result;
 }
