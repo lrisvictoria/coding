@@ -1,0 +1,4 @@
+﻿  test.c
+D:\Anduin_code\force-buckle-1\Leetcode.709.转换成小写字母\Leetcode.709.转换成小写字母\test.c(52,12): warning C4477: “printf”: 格式字符串“%s”需要类型“char *”的参数，但可变参数 1 拥有了类型“int *”
+D:\Anduin_code\force-buckle-1\Leetcode.709.转换成小写字母\Leetcode.709.转换成小写字母\test.c(51,1): warning C4133: “初始化”: 从“char *”到“int *”的类型不兼容
+  Leetcode.709.转换成小写字母.vcxproj -> D:\Anduin_code\force-buckle-1\Leetcode.709.转换成小写字母\x64\Debug\Leetcode.709.转换成小写字母.exe
