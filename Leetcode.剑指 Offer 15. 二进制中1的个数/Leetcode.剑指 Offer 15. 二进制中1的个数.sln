@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32602.215
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Leetcode.剑指 Offer 15. 二进制中1的个数", "Leetcode.剑指 Offer 15. 二进制中1的个数\Leetcode.剑指 Offer 15. 二进制中1的个数.vcxproj", "{C9072F06-0420-4C29-99A1-E701F17EDA31}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C9072F06-0420-4C29-99A1-E701F17EDA31}.Debug|x64.ActiveCfg = Debug|x64
+		{C9072F06-0420-4C29-99A1-E701F17EDA31}.Debug|x64.Build.0 = Debug|x64
+		{C9072F06-0420-4C29-99A1-E701F17EDA31}.Debug|x86.ActiveCfg = Debug|Win32
+		{C9072F06-0420-4C29-99A1-E701F17EDA31}.Debug|x86.Build.0 = Debug|Win32
+		{C9072F06-0420-4C29-99A1-E701F17EDA31}.Release|x64.ActiveCfg = Release|x64
+		{C9072F06-0420-4C29-99A1-E701F17EDA31}.Release|x64.Build.0 = Release|x64
+		{C9072F06-0420-4C29-99A1-E701F17EDA31}.Release|x86.ActiveCfg = Release|Win32
+		{C9072F06-0420-4C29-99A1-E701F17EDA31}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0A529BBD-5545-46CE-BED5-3666D15B6121}
+	EndGlobalSection
+EndGlobal
