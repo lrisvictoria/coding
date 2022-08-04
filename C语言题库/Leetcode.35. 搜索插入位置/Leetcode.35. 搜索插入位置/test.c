@@ -8,19 +8,40 @@
 
 //找插入下标
 
-int searchInsert(int* nums, int numsSize, int target) {
-    int i = 0;
-    int count = 0;//与下标一致
-    for (i = 0; i < numsSize; i++)
-    {
-        if (nums[i] < target)
-        {
-            count++;
-        }
-        else
-        {
-            break;
-        }
-    }
-    return count;
+//int searchInsert(int* nums, int numsSize, int target) {
+//    int i = 0;
+//    int count = 0;//与下标一致
+//    for (i = 0; i < numsSize; i++)
+//    {
+//        if (nums[i] < target)
+//        {
+//            count++;
+//        }
+//        else
+//        {
+//            break;
+//        }
+//    }
+//    return count;
+//}
+
+int searchInsert(int* nums, int numsSize, int target)
+{
+	int left = 0;
+	int right = numsSize - 1;
+	int ans = numsSize;
+	while (left <= right)
+	{
+		int mid = left + (right - left) / 2;
+		if (nums[mid] >= target)
+		{
+			ans = mid;
+			right = mid - 1;
+		}
+		else
+		{
+			left = mid + 1;
+		}
+	}
+	return ans;
 }
