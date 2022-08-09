@@ -23,25 +23,22 @@
 int main()
 {
     char arr[100] = { 0 };
-
-    while (~scanf("%s", arr))
+    scanf("%s", arr);
+    int ans = 0;
+    int count = 0;
+    for (int i = strlen(arr) - 1; i >= 2; i--)
     {
-        int ans = 0;
-        int count = 0;
-        for (int i = strlen(arr) - 1; i >= 2; i--)
+        if (arr[i] >= '0' && arr[i] <= '9')
         {
-            if (arr[i] >= '0' && arr[i] <= '9')
-            {
-                ans += (arr[i] - 48) * (int)pow(16, count);
-                count++;
-            }
-            else if (arr[i] >= 'A' && arr[i] <= 'Z')
-            {
-                ans += (arr[i] - 55) * (int)pow(16, count);
-                count++;
-            }
+            ans += (arr[i] - 48) * (int)pow(16, count);
+            count++;
         }
-        printf("%d\n", ans);
+        else if (arr[i] >= 'A' && arr[i] <= 'Z')
+        {
+            ans += (arr[i] - 55) * (int)pow(16, count);
+            count++;
+        }
     }
+    printf("%d\n", ans);
     return 0;
 }
