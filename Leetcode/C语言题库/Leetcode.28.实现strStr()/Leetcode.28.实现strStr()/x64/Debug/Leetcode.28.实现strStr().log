@@ -1,3 +1,0 @@
-﻿  test.c
-D:\Anduin_code\force-buckle-1\Leetcode.28.实现strStr()\Leetcode.28.实现strStr()\test.c(59,34): warning C4244: “初始化”: 从“__int64”转换到“int”，可能丢失数据
-  Leetcode.28.实现strStr().vcxproj -> D:\Anduin_code\force-buckle-1\Leetcode.28.实现strStr()\x64\Debug\Leetcode.28.实现strStr().exe
