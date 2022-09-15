@@ -14,6 +14,9 @@
 输出：-1
 */
 
+//暴力解法
+
+/*
 int strStr(char* haystack, char* needle)
 {
 	int dest = 0;//needle字符串开始下标
@@ -47,4 +50,77 @@ int strStr(char* haystack, char* needle)
 		}
 	}
 	return -1;
+}
+*/
+
+//KMP算法
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <assert.h>
+
+void GetNext(int* next, const char* needle)
+{
+    assert(next && needle);
+    int lenNee = strlen(needle);
+    next[0] = -1;
+    if (lenNee == 1)//如果子串长度为1，直接返回，不可返回空，至少要返回0下标的值
+    {
+        return;
+    }
+    next[1] = 0;
+    int i = 2;//记录当前next数组下标
+    int k = 0;//记录前一项next数组的值
+
+    while (i < lenNee)
+    {
+        if (k == -1 || needle[i - 1] == needle[k])
+        {
+            next[i] = k + 1;
+            i++;
+            k++;
+        }
+        else
+        {
+            k = next[k];//回退到对应位置
+        }
+    }
+    //next数组优化
+    for (i = 2; i < lenNee; i++)
+    {
+        if (needle[i] == needle[next[i]])
+        {
+            next[i] = next[next[i]];
+        }
+    }
+}
+int strStr(char* haystack, char* needle)
+{
+    assert(haystack && needle);
+    if (haystack == NULL || needle == NULL) return -1;
+    int lenHay = strlen(haystack), lenNee = strlen(needle);
+    if (lenHay < lenNee) return -1;
+
+    int i = 0;//记录主串的下标
+    int j = 0;//记录子串的下标
+
+    int* next = malloc(lenNee * sizeof(int));//创建next数组
+    assert(next);
+
+    GetNext(next, needle);
+    while (i < lenHay && j < lenNee)
+    {
+        if (j == -1 || haystack[i] == needle[j])
+        {
+            i++;
+            j++;
+        }
+        else
+        {
+            j = next[j];//跳转到next数组对应下标
+        }
+    }
+
+    if (j == lenNee) return i - j;
+    else return -1;
 }
