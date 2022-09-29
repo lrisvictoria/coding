@@ -11,7 +11,7 @@
 // 总执行次数(rowIndex + 1) * (rowIndex - 1)
 // (rowIndex)^2 - 1
 // 时间复杂度：O(N^2)
-// 空间复杂度：O(N)
+// 空间复杂度：O(1) 不包括返回值的空间开辟
 
 int* getRow(int rowIndex, int* returnSize)
 {
