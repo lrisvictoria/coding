@@ -45,3 +45,11 @@ int** generate(int numRows, int* returnSize, int** returnColumnSizes)
     }
     return ret;
 }
+
+// 时间复杂度：O(N^2)
+// 空间复杂度：O(1) 不考虑返回值的空间
+
+// 注意这里不是二维数组，二维数组在内存中是连续存放的
+// 但是这里malloc出来的ret，其中元素是连续存放的
+// 但是元素指向的空间，仍然是malloc的，它们的空间不一定连续
+// 这就是和二维数组的差别
