@@ -61,6 +61,7 @@ struct ListNode* removeElements(struct ListNode* head, int val)
             if (cur == head)
             {
                 head = cur->next;
+                free(cur);
                 cur = head;
             }
             // 其他节点删除
